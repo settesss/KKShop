@@ -103,9 +103,6 @@ body {
   margin-top: 68px;
 }
 
-.cards {
-}
-
 .cards__container {
   display: flex;
   flex-direction: column;
@@ -138,9 +135,11 @@ body {
 }
 
 .item-card__image {
+  z-index: 0;
+  position: relative;
   overflow: hidden;
   padding-bottom: 24px;
-  transition: transform 0.3s;
+  transition: all 0.3s;
 }
 
 .item-card:hover .item-card__image {
@@ -187,4 +186,33 @@ body {
   font-weight: 700;
   font-size: 18px;
   text-align: end;
+}
+
+.item-card__buy-block {
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  opacity: 0;
+  text-wrap: nowrap;
+  background-color: #FF3465;
+  transition: background-color 0.3s, opacity 0.2s ease-in;
+}
+
+.item-card__buy-block:hover {
+  background-color: #5A5CDB;
+}
+
+.item-card:hover .item-card__buy-block {
+  opacity: 1;
+}
+
+.item-card__buy-block svg {
+  width: 24px;
+  height: 24px;
+}
+
+.item-card__buy-block path {
+  fill: #FFF;
 }
