@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/fonts.css">
+  <link rel="stylesheet" href="../styles/reset.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/product.css">
+  <link rel="stylesheet" href="../styles/cart.css">
+  <title>Cart</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main class="main">
+      <section class="main__cart cart">
+        <div class="cart__container">
+          <h2 class="cart__title">Корзина / <span class="cart__number">1 шт.</span></h2>
+          <div class="cart__items">
+            <div class="cart__item item">
+              <div class="item__image">
+                <img src="../assets/images/cards/card-item-1.png" alt="Товар в корзине">
+              </div>
+              <div class="item__info">
+                <p class="item__name">Дымка для волос Love</p>
+                <p class="item__expiration-date">2027-08-09</p>
+              </div>
+              <div class="item__price-block">
+                <div class="item__quantity quantity">
+                  <a class="quantity__minus quantity__symbol" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="#F7F7F7" />
+                      <rect x="7" y="11" width="10" height="2" fill="#333" />
+                    </svg>
+                  </a>
+                  <p class="quantity__number">1</p>
+                  <a class="quantity__plus quantity__symbol" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="#F6F6F6" />
+                      <rect x="7" y="11" width="10" height="2" fill="#333" />
+                      <rect x="11" y="17" width="10" height="2" transform="rotate(-90 11 17)" fill="#333" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="quantity__price">10000 руб</p>
+              </div>
+            </div>
+            <div class="cart__item item">
+              <div class="item__image">
+                <img src="../assets/images/cards/card-item-3.png" alt="Товар в корзине">
+              </div>
+              <div class="item__info">
+                <p class="item__name">Сыворотка минеральная для ухода за волосами</p>
+                <p class="item__expiration-date">2023-12-28</p>
+              </div>
+              <div class="item__price-block">
+                <div class="item__quantity quantity">
+                  <a class="quantity__minus quantity__symbol" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="#F7F7F7" />
+                      <rect x="7" y="11" width="10" height="2" fill="#333" />
+                    </svg>
+                  </a>
+                  <p class="quantity__number">1</p>
+                  <a class="quantity__plus quantity__symbol" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="#F6F6F6" />
+                      <rect x="7" y="11" width="10" height="2" fill="#333" />
+                      <rect x="11" y="17" width="10" height="2" transform="rotate(-90 11 17)" fill="#333" />
+                    </svg>
+                  </a>
+                </div>
+                <p class="quantity__price">12700 руб</p>
+              </div>
+            </div>
+            <div class="cart__receipt">
+              <p class="cart__receipt-text">К оплате</p>
+              <p class="quantity__price">22700 руб</p>
+            </div>
+            <button class="cart__button button">
+              <p class="cart__button-text">
+                Оформить заказ
+              </p>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
