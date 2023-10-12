@@ -8,6 +8,11 @@
   transition: transform 0.3s;
 }
 
+.button--gray {
+  background-color: #757575;
+  color: #080808;
+}
+
 .button:hover {
   transform: scale(105%);
 }
