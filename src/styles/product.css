@@ -1,6 +1,6 @@
 .button {
   padding: 8px 0;
-  background-color: #1A1A1A;
+  background-color: #5A5CDB;
   color: #F3F3F3;
   font-family: Rubik;
   font-size: 18px;
@@ -10,7 +10,7 @@
 
 .button--gray {
   background-color: #757575;
-  color: #080808;
+  color: #fff;
 }
 
 .button:hover {
