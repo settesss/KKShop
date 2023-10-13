@@ -9,6 +9,8 @@
 }
 
 .button--gray {
+  display: block;
+  text-align: center;
   background-color: #757575;
   color: #fff;
 }
