@@ -73,6 +73,13 @@
   color: #D785A1;
 }
 
+.product__store {
+  font-family: Rubik;
+  
+  text-transform: uppercase;
+  color: #3c3c3c;
+}
+
 .product__price {
   font-weight: 700;
   font-size: 24px;
