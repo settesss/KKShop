@@ -87,12 +87,12 @@
             <div class="profile__user-bottom">
               <ul class="profile__list">
                 <li class="profile__list-item">
-                  <a class="profile__list-link" href="#">
+                  <a class="profile__list-link" href="#information-block">
                     личная информация
                   </a>
                 </li>
                 <li class="profile__list-item">
-                  <a class="profile__list-link" href="#">
+                  <a class="profile__list-link" href="#orders-block">
                     мои заказы
                   </a>
                 </li>
@@ -104,7 +104,7 @@
               </ul>
             </div>
           </div>
-          <div class="profile__information-block">
+          <div class="profile__information-block" id="information-block">
             <h2 class="profile__title">Личная информация</h2>
             <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
             <input class="input" type="text" placeholder="Фамилия">
@@ -119,6 +119,33 @@
             <button class="profile__button button button--gray">
               <p class="profile__button-text">Редактировать</p>
             </button>
+          </div>
+          <div class="profile__orders-block" id="orders-block">
+            <h2 class="profile__title">Мои заказы</h2>
+            <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
+            <ul class="orders">
+              <li class="orders__order order">
+                <a href="" class="order__link">
+                  <p class="order__text">Заказ №31211</p>
+                  <p class="order__date">23.04.2023</p>
+                </a>
+                <div class="order__line"></div>
+              </li>
+              <li class="orders__order order">
+                <a href="" class="order__link">
+                  <p class="order__text">Заказ №31212</p>
+                  <p class="order__date">17.05.2023</p>
+                </a>
+                <div class="order__line"></div>
+              </li>
+              <li class="orders__order order">
+                <a href="" class="order__link">
+                  <p class="order__text">Заказ №31213</p>
+                  <p class="order__date">28.05.2023</p>
+                </a>
+                <div class="order__line"></div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
