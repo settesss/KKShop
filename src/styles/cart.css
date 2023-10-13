@@ -2,11 +2,15 @@
   display: flex;
 }
 
+.main__cart {
+  padding: 67px 0 50vh;
+}
+
 .cart__container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 67px 15px 50vh;
+  padding: 0 15px;
 }
 
 .cart__title {
@@ -111,7 +115,6 @@
   flex-direction: column;
   align-items: flex-end;
   margin-top: 45px;
-
   height: 100%;
 }
 
