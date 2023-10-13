@@ -59,6 +59,13 @@
 .order__link {
   display: flex;
   align-items: center;
+  transition: all 0.3s;
+  padding: 5px;
+}
+
+.order__link:hover {
+  background-color: #ebe9e9;
+  transform: translateX(20px);
 }
 
 .order__image {
