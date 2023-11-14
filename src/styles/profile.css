@@ -90,6 +90,11 @@
   margin-bottom: 21px;
 }
 
+.profile__information-block input:disabled {
+  background: transparent;
+  color: #bebdbd;
+}
+
 .profile__information-block .input--margin {
   margin-bottom: 52px;
 }

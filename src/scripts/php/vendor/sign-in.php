@@ -19,6 +19,7 @@ if (mysqli_num_rows($checkUser) > 0) {
         "email" => $user['email'],
         "photo" => $user['photo_url'], 
         "phoneNumber" => $user['phone_number'],
+        "address" => $user['delivery_address'],
         "userType" => $user['user_type'],
     ];
 

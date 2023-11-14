@@ -1,11 +1,21 @@
 .button {
   padding: 8px 0;
   background-color: #5A5CDB;
-  color: #F3F3F3;
+  color: #fff;
   font-family: Rubik;
   font-size: 18px;
   text-wrap: nowrap;
   transition: transform 0.3s;
+}
+
+.button--disabled {
+  background-color: #525252;
+  color: #bebdbd;
+}
+
+.button:is(.button--disabled):hover {
+  transform: none;
+  cursor: default;
 }
 
 .button--gray {
