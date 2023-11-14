@@ -1,4 +1,17 @@
-<?php session_start(); ?>
+<?php 
+
+    session_start(); 
+
+    $username = $_SESSION['user']['fullName'];
+    $usernameArray = explode(" ", $username);
+    $firstname = $usernameArray[0];
+    $lastname = $usernameArray[1];
+    
+    if (count($usernameArray) > 2) {
+        $patronimyc = $usernameArray[2];
+    }
+
+?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -24,14 +37,7 @@
                 <div class="profile__user-top user">
                 <div class="user__information">
                     <h3 class="user__name">
-                        <?php 
-                            $username = $_SESSION['user']['fullName'];
-                            $usernameArray = explode(" ", $username);
-                            $firstname = $usernameArray[0];
-                            $lastname = $usernameArray[1];
-
-                            echo $firstname . " " . $lastname;
-                        ?>
+                        <?php echo $firstname . " " . $lastname; ?>
                     </h3>
                     <div class="user__image">
                     <img src="<?php 
@@ -71,11 +77,17 @@
             <div class="profile__information-block" id="information-block">
                 <h2 class="profile__title">Личная информация</h2>
                 <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
-                <input class="input" type="text" placeholder="Фамилия">
-                <input class="input" type="text" placeholder="Имя">
-                <input class="input input--margin" type="text" placeholder="Отчество">
-                <input class="input" type="email" name="email" id="email" placeholder="Ваша почта">
-                <input class="input" type="tel" name="phone" id="phone" placeholder="+7 (000) 000-00-00">
+                <input class="input" type="text" placeholder="Фамилия" value="<?php echo $firstname ?>">
+                <input class="input" type="text" placeholder="Имя" value = "<?php echo $lastname ?>">
+                <input class="input input--margin" type="text" placeholder="Отчество" value="<?php 
+                echo isset($patronimyc) ? $patronimyc : ''; 
+                ?>">
+                <input class="input" type="email" name="email" id="email" placeholder="Ваша почта" value = "<?php 
+                echo $_SESSION['user']['email'] 
+                ?>">
+                <input class="input" type="tel" name="phone" id="phone" placeholder="+7 (000) 000-00-00" value = "<?php 
+                echo isset($_SESSION['user']['phoneNumber']) ? $_SESSION['user']['phoneNumber'] : ''; 
+                ?>">
                 <input class="input" type="text" placeholder="Адрес доставки">
                 <button class="profile__button button">
                 <p class="profile__button-text">Сохранить</p>
