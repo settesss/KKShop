@@ -24,7 +24,7 @@ body {
   width: 100%;
   min-height: 100%;
   padding: 40px;
-  background-color: #5A5CDB;
+  background: linear-gradient(0deg, rgba(33,34,122,1) 0%, rgba(91,33,221,1) 49%, rgba(152,0,240,1) 100%);
   border-radius: 20px;
 }
 
@@ -94,3 +94,9 @@ body {
   text-decoration: underline;
 }
 
+.message {
+  margin: 20px 0 0;
+  text-align: center;
+  background-color: #D70F46;
+  padding: 15px;
+}
