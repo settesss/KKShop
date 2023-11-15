@@ -2,11 +2,13 @@
 
     require_once("connect.php");
 
-    $query = "SELECT * FROM `products`";
-    $productsQuery = mysqli_query($connect, $query);
+    function getProductData() {
+        global $connect; 
 
-    if ($productsQuery) {
-        $products = array();  // Инициализируем массив продуктов
+        $query = "SELECT * FROM `products`";
+        $productsQuery = mysqli_query($connect, $query);
+
+        $products = array();  
 
         while ($product = mysqli_fetch_assoc($productsQuery)) {
             $categoryId = $product['category_id'];
@@ -17,7 +19,7 @@
                 $categoryData = mysqli_fetch_assoc($category);
 
                 $product['category_name'] = $categoryData['category_name'];
-                $products[] = $product;  // Добавляем продукт в массив
+                $products[] = $product;  
 
                 mysqli_free_result($category);
             } else {
@@ -26,6 +28,10 @@
         }
 
         mysqli_free_result($productsQuery);
+
+        return $products; 
     }
-    
+
+    $products = getProductData();
+
 ?>

@@ -69,15 +69,15 @@
 
 .product__name {
   position: absolute;
-  top: -29px;
-  right: -50%;
-  max-width: 610px;
+  top: -5%;
+  right: -37%;
+  max-width: 800px;
   text-transform: uppercase;
   line-height: 130%;
   font-family: Rubik;
   font-weight: 500;
   font-size: 48px;
-}
+} 
 
 .product__name span {
   color: #D785A1;

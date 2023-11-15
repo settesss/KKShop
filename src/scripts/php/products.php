@@ -10,7 +10,7 @@
         $productPrice = $product['price'];
         ?>
         <div class="cards__block-card item-card">
-            <a class="item-card__link" href="product.html">
+            <a class="item-card__link" href="./vendor/openProductCard.php?productId=<?php echo $productId; ?>">
                 <div class="item-card__image">
                     <object>
                         <a class="item-card__buy-block" href="./vendor/addToCart.php?productId=<?php echo $productId; ?>">
@@ -21,7 +21,7 @@
                             </svg>
                         </a>
                     </object>
-                    <img src="../../assets/images/cards/<?php echo $productImage ?>" alt="Love">
+                    <img src="../../assets/images/cards/<?php echo $productImage ?>" alt="Product Card">
                 </div>
             </a>
             <div class="item-card__wrapper">
