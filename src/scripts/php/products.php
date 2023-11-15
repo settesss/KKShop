@@ -7,6 +7,7 @@
         $productDescription = $product['description'];
         $productCategory = $product['category_name'];
         $productImage = $product['image_url'];
+        $productPrice = $product['price'];
 
         ?>
         <div class="cards__block-card item-card">
@@ -32,7 +33,7 @@
                             echo mb_strlen($productDescription) > 50 ? mb_substr($productDescription, 0, 50) . '...' : $productDescription; ?>
                         </p>
                     </div>
-                    <p class="item-card__price">10000 руб.</p>
+                    <p class="item-card__price"><?php echo $productPrice . ' руб.' ?></p>
                 </div>
                 <a class="item-card__category" href="#"><?php echo $productCategory ?></a>
             </div>
