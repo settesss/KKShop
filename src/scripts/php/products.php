@@ -25,12 +25,16 @@
                 </div>
             </a>
             <div class="item-card__wrapper">
-                <div class="item-card__info">
-                    <h2 class="item-card__title"><?php echo $productName ?></h2>
-                    <p class="item-card__description"><?php echo $productDescription ?></p>
-                    <p class="item-card__category"><?php echo $productCategory ?></p>
+                <div class="item-card__body">
+                    <div class="item-card__info">
+                        <h2 class="item-card__title"><?php echo $productName ?></h2>
+                        <p class="item-card__description"><?php 
+                            echo mb_strlen($productDescription) > 50 ? mb_substr($productDescription, 0, 50) . '...' : $productDescription; ?>
+                        </p>
+                    </div>
+                    <p class="item-card__price">10000 руб.</p>
                 </div>
-                <p class="item-card__price">10000 руб.</p>
+                <a class="item-card__category" href="#"><?php echo $productCategory ?></a>
             </div>
         </div>
     <?php

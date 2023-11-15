@@ -26,7 +26,7 @@
             <div class="cards__block">
 
                 <?php require_once("./products.php"); ?>
-
+    
             </div>
             </div>
         </section>
