@@ -124,6 +124,14 @@
   line-height: 200%;
 }
 
+.cart__items:not(:has(.cart__item)) button {
+  display: none;
+}
+
+.cart__items:not(:has(.cart__item)) .cart__button-back {
+  min-width: 258px;
+}
+
 .quantity__price {
   margin-bottom: 9px;
   line-height: 120%;
