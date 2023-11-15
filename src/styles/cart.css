@@ -87,6 +87,10 @@
   align-items: center;
 }
 
+.quantity__symbol {
+  border-radius: 50%;
+}
+
 .quantity__symbol rect,
 .quantity__symbol circle {
   transition: all 0.3s;
