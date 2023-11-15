@@ -17,19 +17,19 @@
         <?php require_once("header.php"); ?>
 
         <main class="main">
-        <div class="main__image">
-            <img src="../../assets/images/main-bg.jpg" alt="Sales">
-        </div>
-        <section class="main__cards cards">
-            <div class="cards__container">
-            <h1 class="cards__title">Товары</h1>
-            <div class="cards__block">
+            <div class="main__image">
+                <img src="../../assets/images/main-bg.jpg" alt="Sales">
+            </div>
+            <section class="main__cards cards">
+                <div class="cards__container">
+                <h1 class="cards__title">Товары</h1>
+                <div class="cards__block">
 
-                <?php require_once("./products.php"); ?>
-    
-            </div>
-            </div>
-        </section>
+                    <?php require_once("./products.php"); ?>
+        
+                </div>
+                </div>
+            </section>
         </main>
 
     </div>
