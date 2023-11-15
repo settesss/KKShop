@@ -103,21 +103,21 @@
                     <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
                     <ul class="orders">
                         <li class="orders__order order">
-                            <a class="order__link" href="order.html">
+                            <a class="order__link" href="#">
                             <p class="order__text">Заказ №31211</p>
                             <p class="order__date">23.04.2023</p>
                             </a>
                             <div class="order__line"></div>
                         </li>
                         <li class="orders__order order">
-                            <a class="order__link" href="order.html">
+                            <a class="order__link" href="#">
                             <p class="order__text">Заказ №31212</p>
                             <p class="order__date">17.05.2023</p>
                             </a>
                             <div class="order__line"></div>
                         </li>
                         <li class="orders__order order">
-                            <a class="order__link" href="order.html">
+                            <a class="order__link" href="#">
                             <p class="order__text">Заказ №31213</p>
                             <p class="order__date">28.05.2023</p>
                             </a>

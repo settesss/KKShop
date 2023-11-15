@@ -171,14 +171,24 @@ body {
 }
 
 .item-card__info {
-  display: flex;
-  flex-direction: column;
   padding-right: 40px;
 }
 
 .item-card__description {
   flex: 1 1 auto;
   font-size: 14px;
+}
+
+.item-card__category {
+  display: inline-block;
+  font-size: 13px;
+  background-color: #5A5CDB;
+  color: #FFF;
+  padding: 8px;
+  max-width: 100%;
+  border-radius: 20px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .item-card__price {
