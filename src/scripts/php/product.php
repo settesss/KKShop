@@ -43,7 +43,7 @@
                             <h2 class="product__store">Scent Haven</h2>
                             <h3 class="product__price"><?php echo $productSelected['price'] . ' руб.'; ?></h3>
                             <div class="product__buttons">
-                                <button class="product__add button">Добавить в корзину</button>
+                                <a class="product__add button" href="./vendor/addToCart.php?productId=<?php echo $productSelected['id'] ?>">Добавить в корзину</a>
                                 <button class="product__like button">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
