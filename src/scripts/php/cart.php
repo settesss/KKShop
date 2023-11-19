@@ -74,11 +74,11 @@
                         <p class="cart__receipt-text">К оплате</p>
                         <p class="quantity__price"><?php echo $totalCost . ' руб.'?></p>
                     </div>
-                    <button class="cart__button button">
+                    <a class="cart__button button" href="./vendor/addOrder.php" id="cart__button">
                         <p class="cart__button-text">
                             Оформить заказ
                         </p>
-                    </button>
+                    </a>
                     <a class="cart__button-back button button--gray" href="../php/index.php">
                         <p class="cart__button-text">
                             Вернуться назад
@@ -88,7 +88,32 @@
             </div>
         </section>
         </main>
+
+        <div class="success__modal" id="success__modal">
+            <div class="success__window">
+                <h2 class="success__text">Заказ успешно оформлен!</h2>
+                <button class="success__close" id="success__close">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="overlay"></div>
+        </div>
+
     </div>
+
+    <script src="../js/pop-up.js"></script>
+
 </body>
 
 </html>
