@@ -19,7 +19,7 @@ session_start();
     <div class="wrapper">
     <div class="container">
     <h1 class="form__title">Регистрация</h1>
-    <form class="form" action="./vendor/sign-up.php" method="POST" enctype="multipart/form-data">
+    <form class="form" action="./vendor/signUp.php" method="POST" enctype="multipart/form-data">
         <label for="form__full-name">Полное имя:</label>
         <input  class="form__item" placeholder="Введите полное ФИО" type="text" name="full_name" id="form__full-name" required />
         <label for="form__email">Электронная почта:</label>

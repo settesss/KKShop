@@ -14,7 +14,7 @@
     <div class="wrapper">
     <div class="container">
     <h1 class="form__title">Вход в аккаунт</h1>
-    <form class="form" action="./vendor/sign-in.php" method="POST">
+    <form class="form" action="./vendor/signIn.php" method="POST">
         <label for="form__login">Логин:</label>
         <input 
         class="form__item" 

@@ -141,6 +141,10 @@
   line-height: 120%;
 }
 
+.button--hidden {
+  display: none;
+}
+
 .cart__button-text {
   font-family: Rubik;
   font-weight: 400;
