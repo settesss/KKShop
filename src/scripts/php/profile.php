@@ -1,7 +1,9 @@
 <?php 
 
-    session_start(); 
+    session_start();
 
+    require_once("./vendor/getOrderData.php");
+    
     $username = $_SESSION['user']['fullName'];
     $usernameArray = explode(" ", $username);
     $firstname = $usernameArray[0];
@@ -102,27 +104,20 @@
                     <h2 class="profile__title">Мои заказы</h2>
                     <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
                     <ul class="orders">
-                        <li class="orders__order order">
-                            <a class="order__link" href="../../html/order.html">
-                            <p class="order__text">Заказ №31211</p>
-                            <p class="order__date">23.04.2023</p>
-                            </a>
-                            <div class="order__line"></div>
-                        </li>
-                        <li class="orders__order order">
-                            <a class="order__link" href="#">
-                            <p class="order__text">Заказ №31212</p>
-                            <p class="order__date">17.05.2023</p>
-                            </a>
-                            <div class="order__line"></div>
-                        </li>
-                        <li class="orders__order order">
-                            <a class="order__link" href="#">
-                            <p class="order__text">Заказ №31213</p>
-                            <p class="order__date">28.05.2023</p>
-                            </a>
-                            <div class="order__line"></div>
-                        </li>
+                        <?php while ($orders = mysqli_fetch_assoc($ordersResult)) : ?>
+                            <li class="orders__order order">
+                                <a class="order__link" href="../../html/order.html">
+                                <p class="order__text">Заказ №<?php echo $orders['id']; ?></p>
+                                <p class="order__date">
+                                    <?php
+                                        $order_date = date_create($orders['order_date']);
+                                        echo date_format($order_date, 'd.m.Y'); 
+                                    ?>
+                                </p>
+                                </a>
+                                <div class="order__line"></div>
+                            </li>
+                        <?php endwhile; ?>
                     </ul>
                 </div>
                 </div>
