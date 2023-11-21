@@ -38,12 +38,12 @@
                                         </div>
                                         <div class="order__item-info">
                                             <h3 class="order__item-name"><?php echo $product['product_name']; ?></h3>
-                                            <p class="order__item-quantity"><?php echo $productQuantity; ?></p>
+                                            <p class="order__item-quantity"><?php echo intval($productQuantity) . ' шт.'; ?></p>
                                         </div>
                                         <p class="order__item-price"><?php echo $product['price'] . ' руб.'; ?></p>
                                     </a>
                                 </li>
-                                <?php $total += $product['price']; ?>
+                                <?php $total += $product['price'] * $productQuantity; ?>
                             <?php endforeach; ?>
                         </ul>
                         <div class="order__receipt">
