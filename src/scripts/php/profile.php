@@ -106,12 +106,12 @@
                     <ul class="orders">
                         <?php while ($orders = mysqli_fetch_assoc($ordersResult)) : ?>
                             <li class="orders__order order">
-                                <a class="order__link" href="../../html/order.html">
+                                <a class="order__link" href="order.php?order_id=<?php echo $orders['id']; ?>">
                                 <p class="order__text">Заказ №<?php echo $orders['id']; ?></p>
                                 <p class="order__date">
                                     <?php
-                                        $order_date = date_create($orders['order_date']);
-                                        echo date_format($order_date, 'd.m.Y'); 
+                                        $orderDate = date_create($orders['order_date']);
+                                        echo date_format($orderDate, 'd.m.Y'); 
                                     ?>
                                 </p>
                                 </a>

@@ -1,5 +1,7 @@
 <?php 
 
+    session_start();
+
     require_once("./vendor/connect.php");
 
     $userId = $_SESSION['user']['id'];
