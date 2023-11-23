@@ -1,4 +1,4 @@
-<?php  ?>
+<?php require_once("./vendor/getCategories.php"); ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -53,10 +53,16 @@
                             class="product__textarea"
                             name="description" 
                             id="product_description" 
-                            rows="10"
+                            rows="5"
                             autocomplete="off"
                             form="product__form"
                             placeholder="Опишите товар настолько, насколько вы считаете нужным"></textarea>
+                            <label class="product__label" for="product_category">Категория товара:</label>
+                            <select class="product__category" name="category" id="product_category">
+                                <?php foreach ($categories as $category) : ?>
+                                        <option value="<?php echo $category['category_id']; ?>"><?php echo $category['category_name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
                             <button class="button" type="submit">Опубликовать</button>
                         </form>
                     </div>

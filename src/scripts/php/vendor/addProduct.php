@@ -9,9 +9,8 @@
     $path = 'assets/images/cards/' . $_FILES['photo']['name'];
     if (!move_uploaded_file($_FILES['photo']['tmp_name'], '../../../' . $path)) {
         $_SESSION['message'] = "Не удалось загрузить фотографию.";
-        header('Location: ../register.php');
     }
 
-    $query = "INSERT "
+    print_r($_POST);
 
 ?>
