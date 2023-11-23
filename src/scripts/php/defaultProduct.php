@@ -48,12 +48,20 @@
                             id="product_price"
                             autocomplete="off"
                             placeholder="1000.00">
+
+                            <label class="product__label" for="product_date">Срок годности товара:</label>
+                            <input 
+                            class="product__input" 
+                            type="date" 
+                            name="date" 
+                            id="product_date">
+
                             <label class="product__label" for="product_description">Описание товара:</label>
                             <textarea 
                             class="product__textarea"
                             name="description" 
                             id="product_description" 
-                            rows="5"
+                            rows="3"
                             autocomplete="off"
                             form="product__form"
                             placeholder="Опишите товар настолько, насколько вы считаете нужным"></textarea>
