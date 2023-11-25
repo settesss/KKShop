@@ -18,7 +18,7 @@
     if (!empty($productSelected)) {
         session_start();
         $_SESSION['productSelected'] = $productSelected;
-        header('Location: ../product.php');
+        header('Location: /src/scripts/php/product.php');
     } else {
         echo "Продукт с ID $productId не найден.";
     }

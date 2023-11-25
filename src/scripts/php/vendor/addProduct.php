@@ -15,13 +15,13 @@
         die("Не удалось загрузить фотографию.");
     }
 
-    // $query = 
-    // "INSERT INTO `products`
-    // (`product_name`, `category_id`, `image_url`, `description`, `price`, `expiration_date`) 
-    // VALUES 
-    // ('$productName','$productCategory','$image_url','$productDescription','$productPrice','$productExpirationDate')";
+    $query = 
+    "INSERT INTO `products`
+    (`product_name`, `category_id`, `image_url`, `description`, `price`, `expiration_date`) 
+    VALUES 
+    ('$productName','$productCategory','$image_url','$productDescription','$productPrice','$productExpirationDate')";
 
-    // mysqli_query($connect, $query);
+    mysqli_query($connect, $query);
 
     header("Location: $currentUrl");
 

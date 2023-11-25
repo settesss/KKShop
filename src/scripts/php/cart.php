@@ -79,7 +79,7 @@
                             Оформить заказ
                         </p>
                     </a>
-                    <a class="cart__button-back button button--gray" href="../php/index.php">
+                    <a class="cart__button-back button button--gray" href="/index.php">
                         <p class="cart__button-text">
                             Вернуться назад
                         </p>

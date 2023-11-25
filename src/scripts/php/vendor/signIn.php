@@ -23,7 +23,7 @@ if (mysqli_num_rows($checkUser) > 0) {
         "userType" => $user['user_type'],
     ];
 
-    header("Location: ../index.php");
+    header("Location: /index.php");
 
 } else {
     $_SESSION['message'] = "Неверный логин. Повторите попытку.";
