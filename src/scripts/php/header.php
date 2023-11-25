@@ -58,10 +58,10 @@
                         </li>
                     <?php else : ?>
                         <li class="header__list-item">
-                            <a class="header__link" href="login.php">Войти</a>
+                            <a class="header__link" href="/src/scripts/php/login.php">Войти</a>
                         </li>
                         <li class="header__list-item">
-                            <a class="header__link" href="register.php">Зарегистрироваться</a>
+                            <a class="header__link" href="/src/scripts/php/register.php">Зарегистрироваться</a>
                         </li>
                     <?php endif; ?> 
                 </ul>
