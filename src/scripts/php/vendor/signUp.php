@@ -8,6 +8,7 @@ $email = strip_tags(trim($_POST['email']));
 $password = strip_tags(trim($_POST['password']));
 $passwordConfirm = strip_tags(trim($_POST['password_confirm']));
 $phoneNumber = strip_tags(trim($_POST['phone_number']));
+$userType = $_POST['user_type'];
 
 if ($password === $passwordConfirm) {
         
@@ -22,7 +23,7 @@ if ($password === $passwordConfirm) {
     $query = 
     "INSERT INTO `users` (`id`, `full_name`, `email`, `photo_url`, `phone_number`, `delivery_address`, `user_type`) 
     VALUES 
-    (NULL, '$fullName', '$email', '$path', '$phoneNumber', NULL, 'buyer')";
+    (NULL, '$fullName', '$email', '$path', '$phoneNumber', NULL, '$userType')";
 
     mysqli_query($connect, $query);
 

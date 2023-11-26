@@ -59,12 +59,23 @@ body {
   margin-bottom: 20px;
 }
 
-.form__item:last-of-type {
-  margin-bottom: 0px;
-}
-
 .form__item[type=file] {
   margin: 0;
+}
+
+.form__radios {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form__radio {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.form__radio label {
+  padding: 0 0 0 10px;
 }
 
 .form__button {

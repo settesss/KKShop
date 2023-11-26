@@ -32,7 +32,7 @@
                                 $total = 0;
                                 foreach ($orderProducts as $product) : ?>
                                 <li class="order__item">
-                                    <a class="order__link" href="#">
+                                    <a class="order__link" href="/src/scripts/php/vendor/openProductCard.php?productId=<?php echo $product['id']; ?>">
                                         <div class="order__image">
                                             <img src="../../assets/images/cards/<?php echo $product['image_url']; ?>" alt="Картинка товара">
                                         </div>
