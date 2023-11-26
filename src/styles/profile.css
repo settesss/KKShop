@@ -16,7 +16,7 @@
 }
 
 .profile__user-block {
-  max-width: 500px;
+  max-width: 450px;
   width: 100%;
   padding-right: 20px;
 }
@@ -52,13 +52,10 @@
   color: #cacaca;
 }
 
-.profile__user-bottom {
-  padding-left: 132px;
-}
-
 .profile__list {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .profile__list-item {
@@ -185,6 +182,34 @@
 
 .profile__store-block:target {
   display: block;
+}
+
+.store__header {
+  display: flex;
+  align-items: center;
+}
+
+.store__title {
+  margin-bottom: 0px;
+  overflow-wrap: anywhere;
+}
+
+.store__header-button {
+  margin-top: 17px;
+  margin-left: 10px;
+}
+
+.store__header-button path {
+  fill: #d1d1d1;
+  transition: fill 0.3s;
+}
+
+.store__header-button:hover path {
+  fill: #333;
+}
+
+.store__subtitle {
+  margin-bottom: 10px;
 }
 
 .store__name {

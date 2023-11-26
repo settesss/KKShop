@@ -141,7 +141,21 @@
 
                     <section class="profile__store-block" id="store-block">
                         <?php if (isset($stores)) : ?>
-                            <h3 class="profile__title"><?php echo $storeName; ?></h3>
+                            <div class="store__header">
+                                <h3 class="profile__title store__title"><?php echo $storeName; ?></h3>
+                                <a class="store__header-button" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="24px" height="24px">
+                                        <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 
+                                            19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 
+                                            5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 
+                                            L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 
+                                            C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 
+                                            C 14 9.4 14.4 9 15 9 z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <h2 class="profile__subtitle store__subtitle">Находится по адресу <?php echo $storeAddress; ?></h2>
+                            <p class="store__hours">Время работы: <?php echo $storeHours; ?></p>
                         <?php else : ?>
                             <h3 class="profile__title">Мой магазин</h3>
                             <h2 class="profile__subtitle">У вас пока что нет магазина.
@@ -151,7 +165,7 @@
                             href="javascript:void(0);" 
                             onclick="showStoreForm()"
                             >Создать?</a></h2>
-                            <form class="store__form" id="store__form" method="POST" action="addStore.php">
+                            <form class="store__form" id="store__form" method="POST" action="./vendor/addStore.php">
                                 <input 
                                 class="input no-disable" 
                                 type="text" 
