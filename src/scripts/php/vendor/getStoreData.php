@@ -1,15 +1,16 @@
 <?php 
 
+    session_start();
     require_once('connect.php');
 
-    $query = "SELECT * FROM `stores`";
+    $userId = $_SESSION['user']['id'];
+    $query = "SELECT * FROM `stores` WHERE `user_id`='$userId'";
     $storesQuery = mysqli_query($connect, $query);
-    $stores = mysqli_fetch_assoc($storesQuery);
-
-    if ($stores) {
-        $storeName = $stores['store_name'];
-        $storeAddress = $stores['store_address'];
-        $storeHours = $stores['store_hours'];
+    
+    if ($stores = mysqli_fetch_assoc($storesQuery)) {
+        $storeName = $stores['name'];
+        $storeAddress = $stores['address'];
+        $storeHours = $stores['hours'];
     }
 
 ?>

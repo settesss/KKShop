@@ -2,7 +2,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         const buttonSave = document.getElementById('button_save');
         const buttonEdit = document.getElementById('button_edit');
-        const inputs = document.querySelectorAll('input');
+        const inputs = document.querySelectorAll('input:not(.no-disable)');
     
         inputs.forEach(input => input.disabled = buttonSave.disabled);
         buttonEdit.disabled = !buttonSave.disabled;

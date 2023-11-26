@@ -174,3 +174,37 @@
   background-color: #828282;
   transition: background-color 0.3s;
 }
+
+/* ======================================================== */
+
+.profile__store-block {
+  flex: 1 1 auto;
+  display: none;
+  flex-direction: column;
+}
+
+.profile__store-block:target {
+  display: block;
+}
+
+.store__name {
+  margin: 10px 0;
+}
+
+.store__link {
+  color: #9697db;
+  transition: color 0.3s;
+}
+
+.store__link:hover {
+  color: #5A5CDB;
+}
+
+.store__form {
+  display: none;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 21px;
+}
