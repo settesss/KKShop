@@ -99,6 +99,13 @@
                     <button class="profile__button button button--gray" id="button_edit"> 
                         <p class="profile__button-text">Редактировать</p>
                     </button>
+                    <a class="profile__button button" href="./vendor/changeUserType.php">
+                        <?php if ($_SESSION['user']['userType'] === 'buyer') : ?>
+                            <p class="profile__button-text">Хочу стать продавцом</p>
+                        <?php else : ?>
+                            <p class="profile__button-text">Хочу стать покупателем</p>
+                        <?php endif; ?>
+                    </a>
                 </div>
                 <div class="profile__orders-block" id="orders-block">
                     <h2 class="profile__title">Мои заказы</h2>
