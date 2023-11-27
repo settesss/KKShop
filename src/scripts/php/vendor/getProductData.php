@@ -3,14 +3,14 @@
     require_once("connect.php");
 
     function getProductData() {
-        global $connect; 
+        global $connect;
 
-        $query = "SELECT * FROM `products`";
-        $productsQuery = mysqli_query($connect, $query);
+        $productsQuery = "SELECT * FROM `products`";
+        $productsResult = mysqli_query($connect, $productsQuery);
 
         $products = array();  
 
-        while ($product = mysqli_fetch_assoc($productsQuery)) {
+        while ($product = mysqli_fetch_assoc($productsResult)) {
             $categoryId = $product['category_id'];
             $categoryQuery = "SELECT `category_name` FROM `product_categories` WHERE `id` = $categoryId";
             $category = mysqli_query($connect, $categoryQuery);
@@ -19,7 +19,7 @@
                 $categoryData = mysqli_fetch_assoc($category);
 
                 $product['category_name'] = $categoryData['category_name'];
-                $products[] = $product;  
+                $products[] = $product;
 
                 mysqli_free_result($category);
             } else {
@@ -27,7 +27,7 @@
             }
         }
 
-        mysqli_free_result($productsQuery);
+        mysqli_free_result($productsResult);
 
         return $products; 
     }
