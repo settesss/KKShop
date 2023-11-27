@@ -8,10 +8,14 @@
         $query = "SELECT * FROM `accounting` WHERE `product_id`='$productId'";
         $result = mysqli_query($connect, $query);
 
-        if (mysqli_fetch_assoc($result)) {
-            return true;
-        }
-        else {
+        if ($accounting = mysqli_fetch_assoc($result)) {
+            if ($accounting['quantity'] == 0) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        } else {
             return false;
         }
     }
