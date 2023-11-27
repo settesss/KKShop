@@ -23,6 +23,16 @@ if (mysqli_num_rows($checkUser) > 0) {
         "userType" => $user['user_type'],
     ];
 
+    if ($user['user_type'] === 'seller') {
+        $storeIdQuery = "SELECT `id` FROM `stores` WHERE `user_id` = {$user['id']}";
+        $storeIdResult = mysqli_query($connect, $storeIdQuery);
+
+        if (mysqli_num_rows($storeIdResult) > 0) {
+            $store = mysqli_fetch_assoc($storeIdResult);
+            $_SESSION['user']['store_id'] = $store['id'];
+        }
+    }
+
     header("Location: /index.php");
 
 } else {

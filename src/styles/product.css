@@ -219,6 +219,15 @@
   line-height: 150%;
 }
 
+.product__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__column {
+  max-width: 240px;
+}
+
 .product__textarea {
   border: 1px solid #cacaca;
   padding: 8px;

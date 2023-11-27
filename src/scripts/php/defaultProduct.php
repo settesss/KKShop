@@ -41,15 +41,30 @@
                             autocomplete="off"
                             placeholder="Клетка для кошки"
                             required />
-                            <label class="product__label" for="product_price">Стоимость товара:</label>
-                            <input 
-                            class="product__input" 
-                            type="number" 
-                            name="price" 
-                            id="product_price"
-                            autocomplete="off"
-                            placeholder="1000.00"
-                            required />
+                            <div class="product__row">
+                                <div class="product__column">
+                                    <label class="product__label" for="product_price">Стоимость товара:</label>
+                                    <input 
+                                    class="product__input" 
+                                    type="number" 
+                                    name="price" 
+                                    id="product_price"
+                                    autocomplete="off"
+                                    placeholder="1000.00"
+                                    required />
+                                </div>
+                                <div class="product__column">
+                                    <label class="product__label" for="product_quantity">Количество товара:</label>
+                                    <input 
+                                    class="product__input" 
+                                    type="number" 
+                                    name="quantity" 
+                                    id="product_quantity"
+                                    autocomplete="off"
+                                    placeholder="1"
+                                    required />
+                                </div>
+                            </div>
                             <label class="product__label" for="product_date">Срок годности товара:</label>
                             <input 
                             class="product__input" 
@@ -71,7 +86,7 @@
                                         <option value="<?php echo $category['category_id']; ?>"><?php echo $category['category_name']; ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <button class="button" type="submit">Опубликовать</button>
+                            <button class="button" type="submit">Добавить</button>
                         </form>
                     </div>
                 </div>

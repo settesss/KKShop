@@ -1,9 +1,12 @@
-<?php 
+<?php
+
+    session_start();
 
     require_once("connect.php");
 
     $productName = strip_tags(trim($_POST['name']));
     $productPrice = strip_tags(trim($_POST['price']));
+    $productQuantity = strip_tags(trim($_POST['quantity']));
     $productDescription = strip_tags(trim($_POST['description']));
     $productCategory = $_POST['category'];
     $productExpirationDate = $_POST['date'];
@@ -15,13 +18,22 @@
         die("Не удалось загрузить фотографию.");
     }
 
-    $query = 
+    $query_products = 
     "INSERT INTO `products`
     (`product_name`, `category_id`, `image_url`, `description`, `price`, `expiration_date`) 
     VALUES 
-    ('$productName','$productCategory','$image_url','$productDescription','$productPrice','$productExpirationDate')";
+    ('$productName', '$productCategory', '$image_url', '$productDescription', '$productPrice', '$productExpirationDate')";
 
-    mysqli_query($connect, $query);
+    mysqli_query($connect, $query_products);
+
+    $productId = mysqli_insert_id($connect);
+
+    $accountingQuery = "INSERT INTO `accounting`
+    (`store_id`, `product_id`, `quantity`, `unit_of_measure`) 
+    VALUES 
+    ({$_SESSION['user']['store_id']}, '$productId', '$productQuantity', 'шт.')";
+
+    mysqli_query($connect, $accountingQuery);
 
     header("Location: $currentUrl");
 
