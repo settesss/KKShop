@@ -225,6 +225,16 @@
   color: #5A5CDB;
 }
 
+.store__product-list {
+  margin-top: 50px;
+  max-width: 800px;
+}
+
+.store__product-link {
+  display: flex;
+  align-items: center;
+}
+
 .store__form {
   display: none;
   flex-direction: column;

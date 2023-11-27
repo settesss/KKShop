@@ -8,6 +8,7 @@
     $storesQuery = mysqli_query($connect, $query);
     
     if ($stores = mysqli_fetch_assoc($storesQuery)) {
+        $storeId = $stores['id'];
         $storeName = $stores['name'];
         $storeAddress = $stores['address'];
         $storeHours = $stores['hours'];

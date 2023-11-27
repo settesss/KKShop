@@ -4,6 +4,7 @@
 
     require_once("./vendor/getOrderData.php");
     require_once("./vendor/getStoreData.php");
+    require_once("./vendor/getStoreProducts.php");
     
     $username = $_SESSION['user']['fullName'];
     $usernameArray = explode(" ", $username);
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="../../styles/reset.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/product.css">
+    <link rel="stylesheet" href="../../styles/order.css">
     <link rel="stylesheet" href="../../styles/profile.css">
     <title>Профиль</title>
 </head>
@@ -156,6 +158,26 @@
                             </div>
                             <h2 class="profile__subtitle store__subtitle">Находится по адресу <?php echo $storeAddress; ?></h2>
                             <p class="store__hours">Время работы: <?php echo $storeHours; ?></p>
+                            <ul class="store__product-list">
+                                <?php 
+                                    $products = getStoreProducts($storeId);
+
+                                    foreach ($products as $product) : ?>
+                                    <li class="order__item">
+                                        <div href="" class="store__product-link">
+                                            <div class="order__image">
+                                                <img
+                                                src="../../assets/images/cards/<?php echo $product['image_url'];?>" 
+                                                alt="<?php echo $product['product_name']; ?>">
+                                            </div>
+                                            <div class="order__item-info">
+                                                <p class="order__item-name"><?php echo $product['product_name']; ?></p>
+                                                <p class="order__item-quantity"><?php echo $product['quantity'] . ' ' . $product['unit_of_measure']; ?></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
                         <?php else : ?>
                             <h3 class="profile__title">Мой магазин</h3>
                             <h2 class="profile__subtitle">У вас пока что нет магазина.
