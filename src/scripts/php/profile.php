@@ -123,19 +123,19 @@
                     <section class="profile__orders-block" id="orders-block">
                         <h2 class="profile__title">Мои заказы</h2>
                         <h3 class="profile__subtitle">Заполните профиль и получите 10% бонусную карту</h3>
-                        <ul class="orders">
+                        <ul class="profile__orders">
                             <?php while ($orders = mysqli_fetch_assoc($ordersResult)) : ?>
-                                <li class="orders__order order">
-                                    <a class="order__link" href="order.php?order_id=<?php echo $orders['id']; ?>">
-                                    <p class="order__text">Заказ №<?php echo $orders['id']; ?></p>
-                                    <p class="order__date">
+                                <li class="profile__orders-order profile__order">
+                                    <a class="profile__order__link" href="order.php?order_id=<?php echo $orders['id']; ?>">
+                                    <p class="profile__order__text">Заказ №<?php echo $orders['id']; ?></p>
+                                    <p class="profile__order__date">
                                         <?php
                                             $orderDate = date_create($orders['order_date']);
                                             echo date_format($orderDate, 'd.m.Y'); 
                                         ?>
                                     </p>
                                     </a>
-                                    <div class="order__line"></div>
+                                    <div class="profile__order__line"></div>
                                 </li>
                             <?php endwhile; ?>
                         </ul>

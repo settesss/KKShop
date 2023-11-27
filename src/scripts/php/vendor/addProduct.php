@@ -11,7 +11,6 @@
     $productCategory = $_POST['category'];
     $productExpirationDate = $_POST['date'];
     $image_url = time() . '-' . $_FILES['photo']['name'];
-    $currentUrl = $_SERVER['HTTP_REFERER'];
     $path = 'assets/images/cards/' . time() . '-' . $_FILES['photo']['name'];
 
     if (!move_uploaded_file($_FILES['photo']['tmp_name'], '../../../' . $path)) {
@@ -35,6 +34,6 @@
 
     mysqli_query($connect, $accountingQuery);
 
-    header("Location: $currentUrl");
+    header("Location: ../profile.php#store-block");
 
 ?>
