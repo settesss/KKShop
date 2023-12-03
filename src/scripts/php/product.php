@@ -49,7 +49,7 @@
                                 <?php if (!isProductStock($productSelected['id'])) : ?>
                                     <div class="product__add button button--disabled">Добавить в корзину</div>
                                 <?php else : ?>
-                                    <a class="product__add button" href="./vendor/updateCart.php?productId=<?php echo $productSelected['id'];?>">Добавить в корзину</a>
+                                    <a class="product__add button" href="./vendor/updateCart.php?productId=<?php echo $productSelected['id'];?>&action=increment">Добавить в корзину</a>
                                 <?php endif; ?>
                                 <button class="product__like button">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
