@@ -2,6 +2,7 @@
     session_start();
 
     require_once("./vendor/isProductStock.php");
+    include("./vendor/getStoreName.php");
 
     if (isset($_SESSION['productSelected'])) {
         $productSelected = $_SESSION['productSelected'];
@@ -42,7 +43,7 @@
                             <h2 class="product__name"><span><?php echo $firstWord; ?></span> <?php echo $remainingName; ?></h2>
                         </div>
                         <div class="product__buy-block">
-                            <h2 class="product__store">Scent Haven</h2>
+                            <h2 class="product__store"><?php getStoreName($productSelected['id']); ?></h2>
                             <h3 class="product__price"><?php echo $productSelected['price'] . ' руб.'; ?></h3>
                             <div class="product__buttons">
                                 <?php if (!isProductStock($productSelected['id'])) : ?>

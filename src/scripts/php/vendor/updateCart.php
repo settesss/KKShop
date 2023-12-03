@@ -6,7 +6,6 @@ require_once('getProductData.php');
 $productId = $_GET['productId'];
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 
-// Получаем доступное количество продукта из таблицы accounting
 $accountingQuery = "SELECT `quantity` FROM `accounting` WHERE `product_id` = '$productId'";
 $accountingResult = mysqli_query($connect, $accountingQuery);
 
