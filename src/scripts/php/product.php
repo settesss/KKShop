@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     require_once("./vendor/isProductStock.php");
@@ -13,6 +14,7 @@
     } else {
         echo "Данные о продукте не найдены.";
     }
+    
 ?>
 
 <!DOCTYPE html>

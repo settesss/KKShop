@@ -1,4 +1,15 @@
-<?php require_once("./vendor/getCategories.php"); ?>
+<?php
+
+    session_start();
+
+    if (!isset($_SESSION['user']['id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    require_once("./vendor/getCategories.php"); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="ru">

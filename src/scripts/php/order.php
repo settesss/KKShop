@@ -1,7 +1,14 @@
 <?php 
 
-    require_once("./vendor/getOrderItems.php");
+    session_start();
 
+    if (!isset($_SESSION['user']['id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
+    require_once("./vendor/getOrderItems.php");
+    
 ?>
 
 <!DOCTYPE html>

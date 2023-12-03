@@ -2,6 +2,11 @@
 
     session_start();
 
+    if (!isset($_SESSION['user']['id'])) {
+        header("Location: login.php");
+        exit();
+    }
+
     require_once("./vendor/getOrderData.php");
     require_once("./vendor/getStoreData.php");
     require_once("./vendor/getStoreProducts.php");
