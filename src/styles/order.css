@@ -10,18 +10,11 @@
 }
 
 .order__info {
-  display: grid;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
-  grid-template-areas:
-    "header header"
-    "store date";
-  align-items: center;
-  max-width: 350px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .order__title {
-  grid-area: header;
   font-weight: 700;
   font-size: 48px;
   line-height: 150%;
@@ -29,21 +22,12 @@
 }
 
 .order__date {
-  grid-area: date;
-  display: inline-block;
+  align-self: flex-start;
   padding: 10px 20px;
-  margin-left: 20px;
   font-size: 22px;
   border-radius: 20px;
   background-color: #5A5CDB;
   color: #ffffff;
-}
-
-.order__store {
-  grid-area: store;
-  display: inline-block;
-  font-size: 24px;
-  text-wrap: nowrap;
 }
 
 .order__list {

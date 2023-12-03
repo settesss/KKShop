@@ -23,14 +23,11 @@
                 <div class="order__container">
                     <div class="order__info">
                         <h2 class="order__title">Заказ №<?php echo $orderId; ?></h2>
-                        <h3 class="order__store">Scent Haven</h3>
                         <p class="order__date"><?php echo date_format($orderDate, 'd.m.Y'); ?></p>
                     </div>
                     <div class="order__items">
                         <ul class="order__list">
-                            <?php 
-                                $total = 0;
-                                foreach ($orderProducts as $product) : ?>
+                            <?php foreach ($orderProducts as $product) : ?>
                                 <li class="order__item">
                                     <a class="order__link" href="/src/scripts/php/vendor/openProductCard.php?productId=<?php echo $product['id']; ?>">
                                         <div class="order__image">
@@ -38,12 +35,11 @@
                                         </div>
                                         <div class="order__item-info">
                                             <h3 class="order__item-name"><?php echo $product['product_name']; ?></h3>
-                                            <p class="order__item-quantity"><?php echo intval($productQuantity) . ' шт.'; ?></p>
+                                            <p class="order__item-quantity"><?php echo $product['quantity'] . ' шт.'; ?></p>
                                         </div>
                                         <p class="order__item-price"><?php echo $product['price'] . ' руб.'; ?></p>
                                     </a>
                                 </li>
-                                <?php $total += $product['price'] * $productQuantity; ?>
                             <?php endforeach; ?>
                         </ul>
                         <div class="order__receipt">

@@ -7,9 +7,8 @@
     $cart = $_SESSION['cart'];
     $userId = $_SESSION['user']['id'];
     $currentDate = date("Y-m-d");
-    $storeId = 1;
 
-    $insertOrderQuery = "INSERT INTO `orders` (store_id, order_date, user_id) VALUES ($storeId, '$currentDate', $userId)";
+    $insertOrderQuery = "INSERT INTO `orders` (order_date, user_id) VALUES ('$currentDate', $userId)";
 
     mysqli_query($connect, $insertOrderQuery);
 

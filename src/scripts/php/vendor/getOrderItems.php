@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     require_once("connect.php");
 
@@ -12,14 +12,20 @@
     $orderItemsResult = mysqli_query($connect, $orderItemsQuery);
 
     $orderProducts = [];
+    $total = 0;
 
     while ($orderItems = mysqli_fetch_assoc($orderItemsResult)) {
-
         $productId = $orderItems['product_id'];
         $orderProductsQuery = "SELECT `id`,`product_name`,`image_url`,`price` FROM `products` WHERE `id` = '$productId'";
         $orderProductsResult = mysqli_query($connect, $orderProductsQuery);
-        $orderProducts[] = mysqli_fetch_assoc($orderProductsResult);
-        $productQuantity = $orderItems['quantity'];
+        $product = mysqli_fetch_assoc($orderProductsResult);
 
+        $productQuantity = $orderItems['quantity'];
+        $product['quantity'] = intval($productQuantity);
+
+        $orderProducts[] = $product;
+
+        $total += $product['price'] * $productQuantity;
     }
+    
 ?>
