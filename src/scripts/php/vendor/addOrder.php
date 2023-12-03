@@ -24,12 +24,16 @@
         foreach ($cart as $product) {
             $productId = $product['id'];
             $productQuantity = $product['quantity'];
-    
+
             $orderItemsQuery = "INSERT INTO `order_items` (order_id, product_id, quantity) VALUES ('$orderId', '$productId', '$productQuantity')";
-    
             mysqli_query($connect, $orderItemsQuery);
+
+            $updateAccountingQuery = "UPDATE `accounting` SET `quantity` = `quantity` - '$productQuantity' WHERE `product_id` = '$productId'";
+            mysqli_query($connect, $updateAccountingQuery);
         }
     }
+
+    unset($_SESSION['cart']);
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 
