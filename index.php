@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./src/styles/fonts.css">
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/style.css">
-    <link rel="shortcut icon" href="./src/assets/favicons/favicon-90.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/assets/favicons/favicon.ico" type="image/x-icon">
     <title>KK Shop</title>
 </head>
 

@@ -235,6 +235,12 @@
   align-items: center;
 }
 
+.store__quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .store__form {
   display: none;
   flex-direction: column;

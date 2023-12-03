@@ -36,8 +36,11 @@ body {
   font-size: 30px;
 }
 
-.logo__link {
-  height: 36px;
+.logo__link svg {
+  max-width: 128px;
+  min-width: 32px;
+  width: 100%;
+  height: 100%;
 }
 
 .header__nav {
@@ -219,9 +222,22 @@ body {
   transition: background-color 0.3s, opacity 0.2s ease-in;
 }
 
+.item-card__disabled,
+.item-card__disabled:hover svg {
+  transition: all 0.3s;
+}
+
 .item-card__buy-block:hover,
 .item-card__category:hover {
   background-color: #5A5CDB;
+}
+
+.item-card__disabled:hover {
+  background-color: #333;
+}
+
+.item-card__disabled:hover svg {
+  opacity: 0.2;
 }
 
 .item-card:hover .item-card__buy-block {
