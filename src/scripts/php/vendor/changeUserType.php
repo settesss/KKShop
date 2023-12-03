@@ -12,15 +12,29 @@
             $newType = "seller";
         } else if ($userType === "seller") {
             $newType = "buyer";
+
+            $updateQuantityQuery = "UPDATE `accounting`
+            JOIN `stores` ON accounting.store_id = stores.id
+            SET accounting.quantity = 0
+            WHERE stores.user_id = '$userId'";
+
+            $updateQuantityResult = mysqli_query($connect, $updateQuantityQuery);
+
+            if (!$updateQuantityResult) {
+                die(mysqli_error($connect));
+            }
         }
 
         $_SESSION['user']['userType'] = $newType;
 
-        $query = "UPDATE `users` SET user_type='$newType' WHERE id='$userId'";
+        $updateUserTypeQuery = "UPDATE `users` SET user_type='$newType' WHERE id='$userId'";
+        $updateUserTypeResult = mysqli_query($connect, $updateUserTypeQuery);
 
-        $result = mysqli_query($connect, $query);
+        if (!$updateUserTypeResult) {
+            die(mysqli_error($connect));
+        }
 
-        ($result) ? header("Location: $currentUrl") : mysqli_error($connect);
+        header("Location: $currentUrl");
     }
 
 ?>
