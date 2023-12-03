@@ -5,6 +5,8 @@
     if (!isset($_SESSION['user']['id'])) {
         header("Location: login.php");
         exit();
+    } else if ($_SESSION['user']['userType'] == 'buyer') {
+        header("Location: /index.php");
     }
 
     require_once("./vendor/getCategories.php"); 
