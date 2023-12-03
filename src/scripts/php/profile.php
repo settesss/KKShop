@@ -52,16 +52,16 @@
                                 <?php echo $firstname . " " . $lastname; ?>
                             </h3>
                             <div class="user__image">
-                            <img src="<?php 
-                                $photoPath = "../../" . $_SESSION['user']['photo'];
-                                if (isset($_SESSION['user']['photo']) && !file_exists($photoPath)) {
-                                    echo ('../../uploads/default-user.png');
-                                } else if (isset($_SESSION['user']['photo'])) {
-                                    echo ('../../' . $_SESSION['user']['photo']); 
-                                } else {
-                                    echo ('../../uploads/default-user.png');
-                                }
-                            ?>" alt="Фотография пользователя">
+                                <img src="<?php 
+                                    $photoPath = "../../" . $_SESSION['user']['photo'];
+                                    if (isset($_SESSION['user']['photo']) && !file_exists($photoPath)) {
+                                        echo ('../../uploads/default-user.png');
+                                    } else if (isset($_SESSION['user']['photo'])) {
+                                        echo ('../../' . $_SESSION['user']['photo']); 
+                                    } else {
+                                        echo ('../../uploads/default-user.png');
+                                    }
+                                ?>" alt="Фотография пользователя">
                             </div>
                         </div>
                         <p class="user__bonus-card">бонусной карты нет</p>

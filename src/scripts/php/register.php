@@ -20,7 +20,7 @@
         <label for="form__email">Электронная почта:</label>
         <input  class="form__item" placeholder="kkshop@shop.com" type="email" name="email" id="form__email" required />
         <label for="form__photo">Фотография профиля:</label>
-        <input  class="form__item" type="file" name="photo" id="form__photo">
+        <input  class="form__item" type="file" name="photo" id="form__photo" accept=".png, .jpg">
         <label for="form__password">Пароль:</label>
         <input  class="form__item" placeholder="Введите свой пароль" type="password" name="password" id="form__password" required />
         <label for="form__password_confirm">Подтверждение пароля:</label>
