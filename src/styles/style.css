@@ -97,6 +97,28 @@ body {
   fill: #5A5CDB;
 }
 
+.header__cart {
+  position: relative;
+}
+
+.header__cart::after {
+  content: attr(data-quantity);
+  position: absolute;
+  display: flex;
+  width: 16px;
+  height: 16px;
+  font-size: 11px;
+  font-family: 'Rubik';
+  background-color: black;
+  color: #FFF;
+  border-radius: 50%;
+  top: 3px;
+  right: -2px;
+  transform: translate(2px, -3px);
+  justify-content: center;
+  align-items: center;
+}
+
 /* ================================================== */
 
 .main {
