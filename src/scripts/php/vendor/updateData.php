@@ -11,8 +11,8 @@
         $phone = mysqli_real_escape_string($connect, $_POST['phone']);
         $address = mysqli_real_escape_string($connect, $_POST['address']);
 
-        if(isset($_SESSION['user']['address'])) {
-            $_SESSION['user']['address'] = $address;
+        if(isset($_COOKIE['address'])) {
+            $_COOKIE['address'] = $address;
         }
 
         $fullname = $firstname . ' ' . $lastname . ' ' . $patronimyc;

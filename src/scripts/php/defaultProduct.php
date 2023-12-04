@@ -5,7 +5,7 @@
     if (!isset($_SESSION['user']['id'])) {
         header("Location: login.php");
         exit();
-    } else if ($_SESSION['user']['userType'] == 'buyer') {
+    } else if (isset($_COOKIE['userType']) && $_COOKIE['userType'] == 'buyer') {
         header("Location: /index.php");
     }
 

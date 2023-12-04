@@ -27,11 +27,11 @@
                     <li class="header__list-item">
                         <a class="header__link" href="/index.php">Каталог товаров</a>
                     </li>
-                    <?php if (isset($_SESSION['user'])) : ?>
+                    <?php if (isset($_SESSION['user']['id'])) : ?>
                         <li class="header__list-item">
                             <a class="header__link" href="/src/scripts/php/profile.php#orders-block">История заказов</a>
                         </li>
-                        <?php if ($_SESSION['user']['userType'] === 'seller') : ?>
+                        <?php if (isset($_COOKIE['userType']) && $_COOKIE['userType'] == 'seller') : ?>
                             <li class="header__list-item">
                                 <a class="header__link" href="/src/scripts/php/defaultProduct.php">Добавить товар</a>
                             </li>
@@ -41,7 +41,7 @@
             </nav>
             <div class="header__menu">
                 <ul class="header__menu-list">
-                    <?php if (isset($_SESSION['user'])) : ?>
+                    <?php if (isset($_SESSION['user']['id'])) : ?>
                         <li class="header__menu-item">
                             <a class="header__menu-link" href="/src/scripts/php/profile.php#orders-block">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -11,7 +11,7 @@
     require_once("./vendor/getStoreData.php");
     require_once("./vendor/getStoreProducts.php");
     
-    $username = $_SESSION['user']['fullName'];
+    $username = $_COOKIE['fullName'];
     $usernameArray = explode(" ", $username);
     $firstname = $usernameArray[0];
     $lastname = $usernameArray[1];
@@ -53,11 +53,11 @@
                             </h3>
                             <div class="user__image">
                                 <img src="<?php 
-                                    $photoPath = "../../" . $_SESSION['user']['photo'];
-                                    if (isset($_SESSION['user']['photo']) && !file_exists($photoPath)) {
+                                    $photoPath = "../../" . $_COOKIE['photo'];
+                                    if (isset($_COOKIE['photo']) && !file_exists($photoPath)) {
                                         echo ('../../uploads/default-user.png');
-                                    } else if (isset($_SESSION['user']['photo'])) {
-                                        echo ('../../' . $_SESSION['user']['photo']); 
+                                    } else if (isset($_COOKIE['photo'])) {
+                                        echo ('../../' . $_COOKIE['photo']); 
                                     } else {
                                         echo ('../../uploads/default-user.png');
                                     }
@@ -78,7 +78,7 @@
                                     мои заказы
                                 </a>
                             </li>
-                            <?php if ($_SESSION['user']['userType'] == 'seller') : ?>
+                            <?php if (isset($_COOKIE['userType']) && $_COOKIE['userType'] == 'seller') : ?>
                                 <li class="profile__list-item">
                                     <a class="profile__list-link" href="#store-block">
                                         мой магазин
@@ -103,13 +103,13 @@
                         echo isset($patronimyc) ? $patronimyc : ''; 
                         ?>">
                         <input class="input" type="email" name="email" id="email" placeholder="Ваша почта" value="<?php 
-                        echo $_SESSION['user']['email'];
+                        echo $_COOKIE['email'];
                         ?>">
                         <input class="input" type="tel" name="phone" id="phone" placeholder="+7 (000) 000-00-00" value="<?php 
-                        echo isset($_SESSION['user']['phoneNumber']) ? $_SESSION['user']['phoneNumber'] : ''; 
+                        echo isset($_COOKIE['phoneNumber']) ? $_COOKIE['phoneNumber'] : ''; 
                         ?>">
                         <input class="input" name="address" type="text" placeholder="Адрес доставки" value="<?php
-                        echo $_SESSION['user']['address'];
+                        echo $_COOKIE['address'];
                         ?>">
                         <button class="profile__button button button--disabled" id="button_save" disabled>
                             <p class="profile__button-text">Сохранить</p>
@@ -118,7 +118,7 @@
                             <p class="profile__button-text">Редактировать</p>
                         </button>
                         <a class="profile__button button" href="./vendor/changeUserType.php">
-                            <?php if ($_SESSION['user']['userType'] === 'buyer') : ?>
+                            <?php if ($_COOKIE['userType'] === 'buyer') : ?>
                                 <p class="profile__button-text">Хочу стать продавцом</p>
                             <?php else : ?>
                                 <p class="profile__button-text">Хочу стать покупателем</p>

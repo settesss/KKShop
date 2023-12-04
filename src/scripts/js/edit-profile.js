@@ -21,7 +21,7 @@
             const formData = new FormData();
             inputs.forEach(input => formData.append(input.name, input.value));
 
-            fetch('../php/vendor/update-data.php', {
+            fetch('../php/vendor/updateData.php', {
                 method: 'POST',
                 body: formData
             });

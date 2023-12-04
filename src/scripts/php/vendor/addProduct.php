@@ -30,7 +30,7 @@
     $accountingQuery = "INSERT INTO `accounting`
     (`store_id`, `product_id`, `quantity`, `unit_of_measure`) 
     VALUES 
-    ({$_SESSION['user']['store_id']}, '$productId', '$productQuantity', 'шт.')";
+    ({$_COOKIE['store_id']}, '$productId', '$productQuantity', 'шт.')";
 
     mysqli_query($connect, $accountingQuery);
 
