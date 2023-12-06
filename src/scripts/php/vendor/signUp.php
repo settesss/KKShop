@@ -11,19 +11,17 @@
     $userType = $_POST['user_type'];
 
     if ($password === $passwordConfirm) {
-        $path = 'uploads/' . time() . $_FILES['photo']['name'];
-        $allowedTypes = ['image/jpeg', 'image/png'];
-
-        if (!in_array($_FILES['photo']['type'], $allowedTypes)) {
-            $_SESSION['message'] = "Недопустимый формат фотографии.";
-            header('Location: ../register.php');
-            exit();
-        }
-
-        if (!move_uploaded_file($_FILES['photo']['tmp_name'], '../../../' . $path)) {
-            $_SESSION['message'] = "Не удалось загрузить фотографию.";
-            header('Location: ../register.php');
-            exit();
+        
+        if ($_FILES['photo']['size'] > 0) {
+            $path = 'uploads/' . time() . $_FILES['photo']['name'];
+        
+            if (!move_uploaded_file($_FILES['photo']['tmp_name'], '../../../' . $path)) {
+                $_SESSION['message'] = "Не удалось загрузить фотографию.";
+                header('Location: ../register.php');
+                exit();
+            }
+        } else {
+            $path = NULL;
         }
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);

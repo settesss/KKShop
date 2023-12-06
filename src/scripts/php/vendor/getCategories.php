@@ -6,6 +6,10 @@
 
     $result = mysqli_query($connect, $query);
 
+    if (!$result) {
+        die('Ошибка выполнения запроса: ' . mysqli_error($connect));
+    }
+
     $categories = [];
 
     while ($category = mysqli_fetch_assoc($result)) {
@@ -14,5 +18,7 @@
             'category_name' => $category['category_name']
         );
     }
+
+    mysqli_free_result($result);
 
 ?>

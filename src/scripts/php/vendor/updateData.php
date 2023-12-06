@@ -17,10 +17,11 @@
 
         $fullname = $firstname . ' ' . $lastname . ' ' . $patronimyc;
 
-        $query = "UPDATE `users` SET `full_name`='$fullname',`email`='$email',`phone_number`='$phone',`delivery_address`=
-        '$address' WHERE `email` = '$email'";
-
-        mysqli_query($connect, $query);
+        $query = "UPDATE `users` SET `full_name`=?, `email`=?, `phone_number`=?, `delivery_address`=? WHERE `email` = ?";
+        $stmt = mysqli_prepare($connect, $query);
+        
+        mysqli_stmt_bind_param($stmt, 'sssss', $fullname, $email, $phone, $address, $email);
+        mysqli_stmt_execute($stmt);
     }
 
 ?>

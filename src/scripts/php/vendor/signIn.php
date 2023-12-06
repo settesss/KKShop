@@ -21,7 +21,14 @@
 
         setcookie('fullName', $user['full_name'], time() + 86400, '/');
         setcookie('email', $user['email'], time() + 86400, '/');
-        setcookie('photo', $user['photo_url'], time() + 86400, '/');
+
+        if ($user['photo_url'] !== NULL) {
+            setcookie('photo', $user['photo_url'], time() + 86400, '/');
+        } else {
+            $defaultPhotoPath = '../../../uploads/default-user.png';
+            setcookie('photo', $defaultPhotoPath, time() + 86400, '/');
+        }
+
         setcookie('phoneNumber', $user['phone_number'], time() + 86400, '/');
         setcookie('address', $user['delivery_address'], time() + 86400, '/');
         setcookie('userType', $user['user_type'], time() + 86400, '/');

@@ -1,7 +1,6 @@
 <?php
 
     session_start();
-
     require_once("connect.php");
 
     $productName = strip_tags(trim($_POST['name']));
@@ -17,22 +16,26 @@
         die("Не удалось загрузить фотографию.");
     }
 
-    $query_products = 
-    "INSERT INTO `products`
-    (`product_name`, `category_id`, `image_url`, `description`, `price`, `expiration_date`) 
-    VALUES 
-    ('$productName', '$productCategory', '$image_url', '$productDescription', '$productPrice', '$productExpirationDate')";
+    $queryProducts = 
+        "INSERT INTO `products`
+        (`product_name`, `category_id`, `image_url`, `description`, `price`, `expiration_date`) 
+        VALUES 
+        (?, ?, ?, ?, ?, ?)";
 
-    mysqli_query($connect, $query_products);
+    $stmtProducts = mysqli_prepare($connect, $queryProducts);
+    mysqli_stmt_bind_param($stmtProducts, "sissds", $productName, $productCategory, $image_url, $productDescription, $productPrice, $productExpirationDate);
+    mysqli_stmt_execute($stmtProducts);
 
     $productId = mysqli_insert_id($connect);
 
-    $accountingQuery = "INSERT INTO `accounting`
-    (`store_id`, `product_id`, `quantity`, `unit_of_measure`) 
-    VALUES 
-    ({$_COOKIE['store_id']}, '$productId', '$productQuantity', 'шт.')";
+    $queryAccounting = "INSERT INTO `accounting`
+        (`store_id`, `product_id`, `quantity`, `unit_of_measure`) 
+        VALUES 
+        (?, ?, ?, 'шт.')";
 
-    mysqli_query($connect, $accountingQuery);
+    $stmtAccounting = mysqli_prepare($connect, $queryAccounting);
+    mysqli_stmt_bind_param($stmtAccounting, "iid", $_COOKIE['store_id'], $productId, $productQuantity);
+    mysqli_stmt_execute($stmtAccounting);
 
     header("Location: ../profile.php#store-block");
 

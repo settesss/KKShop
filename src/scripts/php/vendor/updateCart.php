@@ -1,15 +1,17 @@
 <?php
 
     session_start();
-
     require_once('connect.php');
     require_once('getProductData.php');
 
-    $productId = $_GET['productId'];
+    $productId = isset($_GET['productId']) ? $_GET['productId'] : '';
     $action = isset($_GET['action']) ? $_GET['action'] : '';
 
-    $accountingQuery = "SELECT `quantity` FROM `accounting` WHERE `product_id` = '$productId'";
-    $accountingResult = mysqli_query($connect, $accountingQuery);
+    $accountingQuery = "SELECT `quantity` FROM `accounting` WHERE `product_id` = ?";
+    $stmt = mysqli_prepare($connect, $accountingQuery);
+    mysqli_stmt_bind_param($stmt, 's', $productId);
+    mysqli_stmt_execute($stmt);
+    $accountingResult = mysqli_stmt_get_result($stmt);
 
     if ($accountingData = mysqli_fetch_assoc($accountingResult)) {
         $availableQuantity = $accountingData['quantity'];
@@ -32,8 +34,12 @@
         }
 
         if (!$productExistsInCart) {
-            $productInfoQuery = "SELECT `id`, `product_name`, `image_url`, `price`, `expiration_date` FROM `products` WHERE `id` = '$productId'";
-            $productInfoResult = mysqli_query($connect, $productInfoQuery);
+            $productInfoQuery = "SELECT `id`, `product_name`, `image_url`, `price`, `expiration_date` FROM `products` WHERE `id` = ?";
+            $stmtProductInfo = mysqli_prepare($connect, $productInfoQuery);
+            mysqli_stmt_bind_param($stmtProductInfo, 's', $productId);
+            mysqli_stmt_execute($stmtProductInfo);
+            $productInfoResult = mysqli_stmt_get_result($stmtProductInfo);
+
             $productInCart = mysqli_fetch_assoc($productInfoResult);
 
             if ($productInCart) {
@@ -43,7 +49,6 @@
         }
 
         $currentUrl = $_SERVER['HTTP_REFERER'];
-
         header("Location: $currentUrl");
     } 
 

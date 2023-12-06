@@ -109,7 +109,7 @@
                         echo isset($_COOKIE['phoneNumber']) ? $_COOKIE['phoneNumber'] : ''; 
                         ?>">
                         <input class="input" name="address" type="text" placeholder="Адрес доставки" value="<?php
-                        echo $_COOKIE['address'];
+                        echo isset($_COOKIE['address']) ? $_COOKIE['address'] : ''; 
                         ?>">
                         <button class="profile__button button button--disabled" id="button_save" disabled>
                             <p class="profile__button-text">Сохранить</p>
