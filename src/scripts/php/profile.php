@@ -118,13 +118,15 @@
                         <button class="profile__button button button--gray" id="button_edit"> 
                             <p class="profile__button-text">Редактировать</p>
                         </button>
-                        <a class="profile__button button" href="./vendor/changeUserType.php">
-                            <?php if ($_COOKIE['userType'] === 'buyer') : ?>
-                                <p class="profile__button-text">Хочу стать продавцом</p>
-                            <?php else : ?>
-                                <p class="profile__button-text">Хочу стать покупателем</p>
-                            <?php endif; ?>
-                        </a>
+                        <?php if ($_COOKIE['userType'] !== 'admin') : ?>
+                            <a class="profile__button button" href="./vendor/changeUserType.php">
+                                <?php if ($_COOKIE['userType'] === 'buyer') : ?>
+                                    <p class="profile__button-text">Хочу стать продавцом</p>
+                                <?php else : ?>
+                                    <p class="profile__button-text">Хочу стать покупателем</p>
+                                <?php endif; ?>
+                            </a>
+                        <?php endif; ?>
                     </section>
 
                     <section class="profile__orders-block" id="orders-block">
