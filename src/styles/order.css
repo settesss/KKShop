@@ -24,7 +24,9 @@
 .order__date {
   align-self: flex-start;
   padding: 10px 20px;
-  font-size: 22px;
+  font-size: 18px;
+  font-family: Rubik;
+  letter-spacing: .15rem;
   border-radius: 20px;
   background-color: #5A5CDB;
   color: #ffffff;
@@ -36,7 +38,7 @@
 }
 
 .order__item {
-  padding-bottom: 20px;
+  padding-top: 20px;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -49,7 +51,7 @@
 }
 
 .order__link:hover {
-  background-color: #ebe9e9;
+  background-color: #f0f0f0;
   transform: translateX(20px);
 }
 
