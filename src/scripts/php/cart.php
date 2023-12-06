@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/product.css">
     <link rel="stylesheet" href="../../styles/cart.css">
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" type="image/x-icon">
     <title>Cart</title>
 </head>
 
@@ -83,7 +84,10 @@
                         <p class="cart__receipt-text">К оплате</p>
                         <p class="quantity__price"><?php echo $totalCost . ' руб.'?></p>
                     </div>
-                    <a class="cart__button button <?php echo (empty($_SESSION['cart'])) ? 'button--hidden' : ''; ?>" href="./vendor/addOrder.php" id="cart__button">
+                    <a 
+                    class="cart__button button <?php echo (empty($_SESSION['cart'])) ? 'button--hidden' : ''; ?>"
+                    href="./vendor/addOrder.php"
+                    id="cart__button">
                         <p class="cart__button-text">
                             Оформить заказ
                         </p>

@@ -23,7 +23,15 @@
         (?, ?, ?, ?, ?, ?)";
 
     $stmtProducts = mysqli_prepare($connect, $queryProducts);
-    mysqli_stmt_bind_param($stmtProducts, "sissds", $productName, $productCategory, $image_url, $productDescription, $productPrice, $productExpirationDate);
+    mysqli_stmt_bind_param(
+        $stmtProducts,
+        "sissds",
+        $productName,
+        $productCategory,
+        $image_url,
+        $productDescription,
+        $productPrice,
+        $productExpirationDate);
     mysqli_stmt_execute($stmtProducts);
 
     $productId = mysqli_insert_id($connect);

@@ -26,8 +26,9 @@
 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $query = "INSERT INTO `users` (`id`, `full_name`, `email`, `photo_url`, `phone_number`, `delivery_address`, `user_type`) 
-                VALUES (NULL, ?, ?, ?, ?, NULL, ?)";
+        $query =
+            "INSERT INTO `users` (`id`, `full_name`, `email`, `photo_url`, `phone_number`, `delivery_address`, `user_type`) 
+            VALUES (NULL, ?, ?, ?, ?, NULL, ?)";
 
         $stmt = mysqli_prepare($connect, $query);
 

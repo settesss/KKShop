@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="../../styles/order.css">
     <link rel="stylesheet" href="../../styles/profile.css">
     <link rel="stylesheet" href="../../styles/cart.css">
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" type="image/x-icon">
     <title>Профиль</title>
 </head>
 <body>

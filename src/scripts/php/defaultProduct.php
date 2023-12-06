@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="../../styles/reset.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/product.css">
-    <title>Product</title>
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" type="image/x-icon">
+    <title>Добавить продукт</title>
 </head>
 
 <body>

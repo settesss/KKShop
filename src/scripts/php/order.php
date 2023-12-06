@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="../../styles/style.css">
     <link rel="stylesheet" href="../../styles/product.css">
     <link rel="stylesheet" href="../../styles/order.css">
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" type="image/x-icon">
     <title>Заказ</title>
 </head>
 <body>

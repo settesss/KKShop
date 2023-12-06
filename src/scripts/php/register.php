@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../styles/fonts.css">
     <link rel="stylesheet" href="../../styles/reset.css">
     <link rel="stylesheet" href="../../styles/login.css">
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico" type="image/x-icon">
     <title>Регистрация</title>
 </head>
 <body>
